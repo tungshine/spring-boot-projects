@@ -1,0 +1,13 @@
+# Created by .ignore support plugin (hsz.mobi)
+
+# for idea
+/.idea
+/projects.iml
+/*/*.iml
+
+# for eclipse
+/*/.settings/
+/*/.project
+/*/.classpath
+
+/*/target
