@@ -2,7 +2,6 @@
 
 # for idea
 /.idea
-/projects.iml
 /*/*.iml
 
 # for eclipse
@@ -11,3 +10,6 @@
 /*/.classpath
 
 /*/target
+
+# for jrebel
+/*/src/main/resources/rebel.xml
