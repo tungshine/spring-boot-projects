@@ -9,11 +9,13 @@ import com.mongodb.MongoClient;
 @Configuration
 public class MongoDBConfig {
 
-	public @Bean MongoClient mongoClient() {
-		return new MongoClient("localhost", 27017);
-	}
+    public @Bean
+    MongoClient mongoClient() {
+        return new MongoClient("localhost", 27017);
+    }
 
-	public @Bean MongoTemplate mongoTemplate() {
-		return new MongoTemplate(mongoClient(), "test_mongo");
-	}
+    public @Bean
+    MongoTemplate mongoTemplate() {
+        return new MongoTemplate(mongoClient(), "test_mongo");
+    }
 }

@@ -7,10 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * @ Author: TungShine
- * @ Description:
- * @ Date: Create in 1:18 2018/7/19
- * @ Modified By:
+ * @Author: TungShine
+ * @Description:
+ * @Date: Create in 1:18 2018/7/19
+ * @Modified By:
  */
 @Service
 public class UserServiceImpl implements UserService {
@@ -20,11 +20,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getUser(Integer id) {
-        return userDao.getUser(id);
+        return userDao.findById(id);
     }
 
     @Override
     public void addUser(User user) {
-        userDao.insertUser(user);
+        userDao.save(user);
     }
 }

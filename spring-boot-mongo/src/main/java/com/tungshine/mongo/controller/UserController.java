@@ -9,27 +9,26 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @ Author: TungShine 
- * @ Description: 
- * @ Date: Create in 1:08 2018/7/19 
- * @ Modified By:
+ * @Author: TungShine
+ * @Description:
+ * @Date: Create in 1:08 2018/7/19
+ * @Modified By:
  */
 @RestController
 public class UserController {
 
-	@Autowired
-	private UserService userService;
+    @Autowired
+    private UserService userService;
 
-	@RequestMapping("/get/{id}")
-	public User getUser(@PathVariable int id) {
-		return userService.getUser(id);
-	}
+    @RequestMapping("/get/{id}")
+    public User getUser(@PathVariable int id) {
+        return userService.getUser(id);
+    }
 
-	@RequestMapping("/add")
-	public String add(@RequestParam("id") Integer id, @RequestParam("name") String name,
-			@RequestParam("age") Integer age) {
-		User user = new User(id, name, age);
-		userService.addUser(user);
-		return "success";
-	}
+    @RequestMapping("/add")
+    public String add(@RequestParam("id") Integer id, @RequestParam("name") String name, @RequestParam("age") Integer age) {
+        User user = new User(id, name, age);
+        userService.addUser(user);
+        return "success";
+    }
 }
