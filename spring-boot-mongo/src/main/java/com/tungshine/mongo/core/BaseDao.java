@@ -39,6 +39,14 @@ public interface BaseDao<T, PK extends Serializable> {
     List<T> pageListByAndOperation(LinkedHashMap<String, Object> linkedHashMap, Integer pageNo, Integer pageSize);
 
     /**
+     * 组合查询总数(and)
+     *
+     * @param linkedHashMap
+     * @return
+     */
+    Long totalByAndOperation(LinkedHashMap<String, Object> linkedHashMap);
+
+    /**
      * 分页组合查询数据(or)
      *
      * @param linkedHashMap
@@ -49,18 +57,30 @@ public interface BaseDao<T, PK extends Serializable> {
     List<T> pageListByOrOperation(LinkedHashMap<String, Object> linkedHashMap, Integer pageNo, Integer pageSize);
 
     /**
-     * 组合查询总数(and)
-     *
-     * @param linkedHashMap
-     * @return
-     */
-    Long totalByAndOperation(LinkedHashMap<String, Object> linkedHashMap);
-
-    /**
      * 组合查询总数(or)
      *
      * @param linkedHashMap
      * @return
      */
     Long totalByOrOperation(LinkedHashMap<String, Object> linkedHashMap);
+
+    /**
+     * 分页模糊查询:一个条件匹配所有字段
+     *
+     * @param value
+     * @param pageNo
+     * @param pageSize
+     * @return
+     */
+    List<T> pageListByVague(Object value, Integer pageNo, Integer pageSize);
+
+    /**
+     * 模糊查询总数:一个条件匹配所有字段
+     *
+     * @param value
+     * @return
+     */
+    Long totalByVague(Object value);
+
+
 }
