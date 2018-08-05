@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    name: db
+    url: jdbc:mysql://localhost:3306/sflc?useUnicode=true&amp;characterEncoding=UTF-8
+    username: root
+    password: system
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    minIdle: 5
+    maxIdle: 20
+    initialSize: 10
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 50
+    removeAbandoned: true
+    filters: stat
+    cachePrepStmts: true  # 开启二级缓存
+server:
+  servlet:
+    context-path: /sfyp
