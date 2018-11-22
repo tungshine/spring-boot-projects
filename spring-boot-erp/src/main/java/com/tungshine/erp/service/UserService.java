@@ -41,7 +41,7 @@ public class UserService {
      * @param user
      * @return
      */
-    @CachePut(key = "#user.id", cacheNames = "user")
+//    @CachePut(key = "#user.id", cacheNames = "user")
     public int addUser(User user) {
         System.out.println("------------" + user.getId());
         return userMapper.insertUser(user);
@@ -51,7 +51,7 @@ public class UserService {
         return userMapper.findByUsername(username);
     }
 
-    @Cacheable(key = "#currentPage", cacheNames = "user_list")
+//    @Cacheable(key = "#currentPage", cacheNames = "user_list")
     public List<User> findUserByPage(int currentPage, int pageSize) {
         PageHelper.startPage(currentPage, pageSize);
         List<User> users = userMapper.getUserList();
