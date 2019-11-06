@@ -26,7 +26,9 @@ public class HttpUtils {
      * 读取body内容
      *
      * @param request
-     * @return
+     * @return byte[]
+     * @author TangXu
+     * @date 2019/11/6 11:04
      */
     public static byte[] readBody(HttpServletRequest request) {
         try {
